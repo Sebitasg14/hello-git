@@ -1,0 +1,23 @@
+# Reglas de Codificación para el Agente de IA
+
+- Utiliza siempre la tabulación para formatear el código, específicamente con 4 espacios. (No se permiten tabulaciones reales).
+- Prioriza siempre soluciones simples, claras y directas; evita la sobreingeniería. Lo simple es preferible a lo complejo, a menos que haya una justificación insuperable de rendimiento, escalabilidad o seguridad.
+- Al corregir un error o bug, no introduzcas un nuevo patrón o tecnología sin antes haber agotado todas las opciones con la implementación actual. Si finalmente decides hacerlo, asegura la eliminación completa de la implementación anterior para evitar lógica duplicada u obsoleta.
+- Evita la duplicación de código siempre que sea posible. Busca y reutiliza código existente con lógica o funcionalidad similar, y utiliza funciones, clases o módulos para abstraer la lógica común.
+- Escribe pruebas unitarias y de integración para el código nuevo o modificado. Todas las nuevas funcionalidades y correcciones de errores deben venir acompañadas de sus respectivas pruebas.
+- Documenta el código de forma clara y concisa. Utiliza comentarios explicativos en líneas de código complejas, incluye docstrings para funciones, clases y módulos, y mantén los archivos `README.md` actualizados.
+- Considera el rendimiento y la escalabilidad del código. No optimices prematuramente, pero sé consciente de las implicaciones de las decisiones de diseño en grandes volúmenes de datos o bajo alta carga.
+- Maneja errores y excepciones de forma robusta. Anticipa posibles fallos, captura excepciones de forma adecuada y proporciona mensajes de error claros e informativos, evitando "tragar" excepciones sin manejarlas.
+- Sigue las guías de estilo y convenciones del lenguaje o framework específico utilizado (ej. PEP 8 para Python, camelCase para JavaScript, PascalCase para clases, snake_case para funciones/variables).
+- Asegúrate de hacer solo los cambios solicitados o aquellos en los que tengas plena confianza de que están bien comprendidos y están directamente relacionados con la solicitud actual. Si identificas un problema o mejora no relacionada, documéntalo y propónlo como una tarea separada.
+- Mantén la base de código limpia y bien organizada. Elimina código comentado o "muerto" que ya no se utiliza. Organiza el código en módulos, componentes o directorios lógicos.
+- Después de realizar cambios, SIEMPRE asegúrate de iniciar un nuevo servidor para que puedan probarse (en caso de que sea un cambio que lo requiera).
+- Mata siempre todos los servidores relacionados que hayan sido creados en pruebas anteriores antes de iniciar un nuevo servidor para evitar conflictos de puertos, recursos o estados de pruebas anteriores.
+- Verifica siempre los logs del servidor después de reiniciar para identificar posibles errores tempranamente.
+- Busca siempre código existente para iterar en lugar de crear nuevo código desde cero; fomenta la creación y el uso de funciones y componentes reutilizables.
+- Escribe código que tenga en cuenta los diferentes entornos: desarrollo, pruebas y producción. Utiliza archivos de configuración específicos para cada entorno y evita dependencias directas de rutas o credenciales, usando variables de entorno o sistemas de gestión de secretos.
+- Implementa la seguridad en todas las etapas del desarrollo. Valida siempre las entradas del usuario, protege contra vulnerabilidades comunes (ej. inyección SQL, XSS) y gestiona las credenciales de forma segura.
+- Evalúa el impacto potencial de los cambios en otros módulos o componentes del sistema. Busca dependencias y posibles efectos secundarios antes de implementar cambios significativos.
+- Aprende activamente de los errores, los fallos de las pruebas, los problemas de producción y los comentarios de las revisiones de código pasadas para refinar y mejorar continuamente las habilidades de generación de código y toma de decisiones.
+- Evita escribir scripts directamente en archivos de código fuente si es posible, especialmente si ese script se va a ejecutar una sola vez. Si un script es necesario para una tarea específica, asegúrate de que esté documentado, versionado y que su propósito sea claro, preferiblemente dentro de un directorio de `scripts` o `utils` designado.
+- Diseña el código en módulos pequeños y acoplados de forma flexible. Cada módulo debe tener una responsabilidad única (Principio de Responsabilidad Única - SRP).
